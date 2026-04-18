@@ -1,0 +1,3 @@
+[providers]
+default = ["desktopapplications", "calc", "symbols"] # providers to be queried when query is empty
+empty = ["desktopapplications"] # providers to be queried when query is empty
