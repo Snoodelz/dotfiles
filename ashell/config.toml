@@ -1,0 +1,48 @@
+log_level = "warn"
+position = "Top"
+
+[modules]
+left = [ "appLauncher", "Updates", "Workspaces" ]
+center = [ "WindowTitle" ]
+right = [ "SystemInfo", "MediaPlayer", [ "Tempo", "Settings" ] ]
+
+[[CustomModule]]
+name = "appLauncher"
+icon = "󱗼"
+command = "walker"
+[window_title]
+mode = "Title"
+truncate_title_after_length = 100
+
+[media_player]
+max_title_length = 50
+indicator_format = "IconAndTitle"
+
+[updates]
+check_cmd = "checkupdates; paru -Qua"
+update_cmd = 'alacritty -e bash -c "paru; echo Done - Press enter to exit; read" &'
+interval = 3600
+
+[settings]
+lock_cmd = "playerctl --all-players pause; nixGL hyprlock &"
+audio_sinks_more_cmd = "pavucontrol -t 3"
+audio_sources_more_cmd = "pavucontrol -t 4"
+wifi_more_cmd = "nm-connection-editor"
+bluetooth_more_cmd = "blueberry"
+audio_indicator_format = "Icon"
+microphone_indicator_format = "Icon"
+network_indicator_format = "Icon"
+bluetooth_indicator_format = "Icon"
+brightness_indicator_format = "Icon"
+indicators = [ "IdleInhibitor", "Audio", "Microphone", "Bluetooth", "Network", "Brightness" ]
+
+[appearance]
+scale_factor = 1.25
+
+[appearance.menu]
+opacity = 0.9
+
+[tempo]
+clock_format = "%a %d %b %R"
+weather_location = { City = "Linköping" }
+weather_indicator = "IconAndTemperature"
