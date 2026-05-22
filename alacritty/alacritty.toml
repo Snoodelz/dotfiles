@@ -1,0 +1,4 @@
+[general]
+import = ["~/.config/alacritty/themes/tokyonight_storm.toml"]
+[font.normal]
+family = "JetBrainsMono Nerd Font"
